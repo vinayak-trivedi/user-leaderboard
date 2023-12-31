@@ -19,9 +19,3 @@
   font-size: 18px;
   font-weight: 600;
 }
-
-.votes-details .votes-details__votes-item-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
