@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import { getUserDetails } from './api/users';
 import { getVotes } from './api/votes';
+import VotesDisplayItem from './components/VotesDisplayItem';
 
 function App() {
+  const { data: votes } = getVotes();
+  const votesItems = votes?.map((vote) => (
+    <VotesDisplayItem votes={vote.votes} userId={vote.userId} />
+  ));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Leaderboard</h1>
+      <section className="votes-details">
+        <header className="votes-details__header">
+          <h2>User</h2>
+          <p className="votes-details__header-text">Votes</p>
+        </header>
+        <div className="votes-details__votes-item-container">
+          {votesItems}
+        </div>
+      </section>
     </div>
   );
 }

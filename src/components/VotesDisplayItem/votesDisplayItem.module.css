@@ -1,0 +1,17 @@
+.votes_display_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.votes_display_item .user_image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.votes_display_item .votes_text {
+  font-size: 14px;
+  font-weight: 600;
+}
